@@ -10,6 +10,7 @@
     <modules>
         <module>message-queue</module>
         <module>message-queue</module>
+        <module>gateway</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -26,8 +27,13 @@
         <spring-boot-dependencies.version>2.1.12.RELEASE</spring-boot-dependencies.version>
         <spring-cloud-alibaba-dependencies.version>2.1.1.RELEASE</spring-cloud-alibaba-dependencies.version>
 
+        <spring-boot-starter-test.version>2.3.1.RELEASE</spring-boot-starter-test.version>
+
         <!-- RocketMQ -->
         <rocketmq-spring-boot-starter>2.0.3</rocketmq-spring-boot-starter>
+
+        <!--Gateway-->
+        <spring-cloud-starter-gateway.version>2.1.4.RELEASE</spring-cloud-starter-gateway.version>
 
     </properties>
 
@@ -56,12 +62,25 @@
                 <scope>import</scope>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot-starter-test.version}</version>
+            </dependency>
+
 
             <!-- RocketMQ -->
             <dependency>
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-spring-boot-starter</artifactId>
                 <version>${rocketmq-spring-boot-starter}</version>
+            </dependency>
+
+            <!--Gateway-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-gateway</artifactId>
+                <version>${spring-cloud-starter-gateway.version}</version>
             </dependency>
 
         </dependencies>
