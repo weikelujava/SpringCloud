@@ -26,6 +26,7 @@ public class RocketMQConfig {
         properties.setProperty("AccessKey","**");
         //
         properties.setProperty("SecretKey","**");
+
         //
 //        properties.setProperty(PropertyKeyConst.SendMsgTimeoutMillis, "3000");
         // 顺序消息消费失败进行重试前的等待时间，单位(毫秒)
