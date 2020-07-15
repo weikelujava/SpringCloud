@@ -10,3 +10,11 @@ spring:
     gateway:
       routes:
         id: gateway-service
+
+
+smartyang:
+  gateway:
+    # 网关动态路由
+    dynamicRoute:
+      enabled: true
+      dataType: nacos
