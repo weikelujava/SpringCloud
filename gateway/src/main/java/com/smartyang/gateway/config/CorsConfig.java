@@ -49,10 +49,15 @@ public class CorsConfig {
      */
     @Bean
     public FilterRegistrationBean<CorsFilter> someFilterRegistration(){
+        //通过FilterRegistrationBean实例设置优先级可以生效，通过@WebFilter无效
         FilterRegistrationBean<CorsFilter> registration = new FilterRegistrationBean<>();
+        //注册自定义过滤器
         registration.setFilter(corsFilter());
+        //过滤所有路径
         registration.addUrlPatterns("/*");
+        //定义过滤器名称
         registration.setName("corsFilter");
+        //定义优先级，越低优先级越高
         registration.setOrder(Ordered.HIGHEST_PRECEDENCE);
         return registration;
     }
