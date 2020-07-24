@@ -1,10 +1,12 @@
 package com.smartyang.redis.controller;
 
 import com.smartyang.redis.model.Review;
+import com.smartyang.redis.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.*;
 
@@ -29,20 +31,20 @@ public class RedisController {
     private RedisTemplate<String,Object> redisTemplate;
 
 
+    @Autowired
+    private ReviewService reviewService;
 
 
 
-    @RequestMapping("/add")
+    @RequestMapping("/add-review")
     public String addRedisData(){
-
-        for (int i = 1; i < 1000; i++) {
+        for (int i = 1; i < 100000; i++) {
             Review review = new Review();
             review.setId(i);
             review.setCustomerId(randomCustomerId());
             review.setReviewContent("第"+i+"条评论,评论者:"+review.getCustomerId());
             review.setCategoryName(getCategoryName());
-            String cacheKey = "review:"+review.getCustomerId();
-
+            reviewService.saveReview(review);
         }
         return "增加成功";
     }
