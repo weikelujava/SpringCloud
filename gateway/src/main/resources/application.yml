@@ -14,7 +14,7 @@ spring:
 
 smartyang:
   gateway:
-    # Íø¹Ø¶¯Ì¬Â·ÓÉ
+    # ï¿½ï¿½ï¿½Ø¶ï¿½Ì¬Â·ï¿½ï¿½
     dynamicRoute:
       enabled: true
       dataType: nacos
