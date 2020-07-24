@@ -11,9 +11,11 @@
         <module>message-queue</module>
         <module>message-queue</module>
         <module>gateway</module>
+        <module>yang-redis</module>
     </modules>
     <packaging>pom</packaging>
 
+    <!--所有的文件依赖没有参考相关的包规则，随机使用的-->
     <properties>
         <!-- 编译相关 -->
         <java.version>1.8</java.version>
@@ -34,6 +36,15 @@
 
         <!--Gateway-->
         <spring-cloud-starter-gateway.version>2.1.4.RELEASE</spring-cloud-starter-gateway.version>
+        <!--lombok-->
+        <lombok.version>1.18.12</lombok.version>
+        <!--redis-->
+        <spring-boot-starter-data-redis.version>2.3.0.RELEASE</spring-boot-starter-data-redis.version>
+        <!---->
+        <mybatis-plus.version>3.1.2</mybatis-plus.version>
+        <!---->
+        <druid-spring-boot-starter.version>1.1.20</druid-spring-boot-starter.version>
+        <spring-boot-configuration-processor.version>2.1.12.RELEASE</spring-boot-configuration-processor.version>
 
     </properties>
 
@@ -82,6 +93,43 @@
                 <artifactId>spring-cloud-starter-gateway</artifactId>
                 <version>${spring-cloud-starter-gateway.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring-boot-starter-data-redis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>${spring-boot-configuration-processor.version}</version>
+                <optional>true</optional>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
