@@ -12,6 +12,7 @@
         <module>message-queue</module>
         <module>gateway</module>
         <module>yang-redis</module>
+        <module>lua</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,5 +1,9 @@
 package com.smartyang.redis.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 
 /**
@@ -12,6 +16,7 @@ import java.io.Serializable;
  * @date: 2020/7/24 16:28
  * @remark: 修改内容
  */
+@TableName("review")
 public class Review implements Serializable {
 
     private static final long serialVersionUID = -8872019980449384830L;
@@ -19,6 +24,7 @@ public class Review implements Serializable {
     /**
      * 评论ID
      */
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
