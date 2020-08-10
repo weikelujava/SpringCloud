@@ -29,7 +29,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-@ConditionalOnProperty(prefix = "smartyang.gateway.dynamicRoute",name = "enabled",havingValue = "true",matchIfMissing = true)
+@ConditionalOnProperty(prefix = "smartyang.gateway.dynamicRoute", name = "enabled", havingValue = "true", matchIfMissing = true)
 public class DynamicZuulRouteConfig {
 
 
@@ -43,8 +43,8 @@ public class DynamicZuulRouteConfig {
      * 动态路由-Nacos的实现
      */
     @Configuration
-    @ConditionalOnProperty(prefix = "smartyang.gateway.dynamicRoute",name = "dataType",havingValue = "nacos",matchIfMissing = true)
-    class NacosZuulRoute{
+    @ConditionalOnProperty(prefix = "smartyang.gateway.dynamicRoute", name = "dataType", havingValue = "nacos", matchIfMissing = true)
+    class NacosZuulRoute {
 
         @Autowired
         private NacosConfigProperties nacosConfigProperties;
@@ -54,8 +54,8 @@ public class DynamicZuulRouteConfig {
 
 
         @Bean
-        public NacosDynRouteLocator nacosDynRouteLocator(){
-            return new NacosDynRouteLocator(nacosConfigProperties,applicationEventPublisher,dispatcherServletPath.getPath(),zuulProperties);
+        public NacosDynRouteLocator nacosDynRouteLocator() {
+            return new NacosDynRouteLocator(nacosConfigProperties, applicationEventPublisher, dispatcherServletPath.getPath(), zuulProperties);
         }
 
     }

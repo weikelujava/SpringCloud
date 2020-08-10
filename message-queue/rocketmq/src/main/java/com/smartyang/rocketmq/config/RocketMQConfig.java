@@ -17,15 +17,15 @@ import java.util.Properties;
 @Configuration
 public class RocketMQConfig {
 
-    public Properties getProperties(){
+    public Properties getProperties() {
 
-        Properties properties=new Properties();
+        Properties properties = new Properties();
         /**
          * 键的首字母必须大写
          */
-        properties.setProperty("AccessKey","**");
+        properties.setProperty("AccessKey", "**");
         //
-        properties.setProperty("SecretKey","**");
+        properties.setProperty("SecretKey", "**");
 
         //
 //        properties.setProperty(PropertyKeyConst.SendMsgTimeoutMillis, "3000");
@@ -35,6 +35,6 @@ public class RocketMQConfig {
 //        properties.put(PropertyKeyConst.MaxReconsumeTimes, "20");
         //
 //        properties.put(PropertyKeyConst.NAMESRV_ADDR, "http://MQ_INST_1944503281593155_BaOTPbFU.mq-internet-access.mq-internet.aliyuncs.com:80");
-        return  properties;
+        return properties;
     }
 }

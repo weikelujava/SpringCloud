@@ -17,8 +17,7 @@ import java.util.Properties;
 public class RocketMQProducer {
 
 
-
-    public boolean sendMessage(Message message,String groupId){
+    public boolean sendMessage(Message message, String groupId) {
         Properties properties =
     }
 }

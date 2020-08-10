@@ -23,10 +23,11 @@ public class CorsConfig {
 
     /**
      * 跨域过滤配置
+     *
      * @return CorsFilter
      */
     @Bean
-    public CorsFilter corsFilter(){
+    public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         // 允许向该服务提交请求的方法，*表示全部允许
         corsConfiguration.addAllowedMethod(CorsConfiguration.ALL);

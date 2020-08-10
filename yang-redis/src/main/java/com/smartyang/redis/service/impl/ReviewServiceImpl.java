@@ -29,7 +29,7 @@ import java.util.Map;
 public class ReviewServiceImpl extends SuperServiceImpl<ReviewMapper, Review> implements ReviewService {
 
     @Autowired
-    private RedisTemplate<String,Object> redisTemplate;
+    private RedisTemplate<String, Object> redisTemplate;
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
@@ -43,30 +43,30 @@ public class ReviewServiceImpl extends SuperServiceImpl<ReviewMapper, Review> im
     @Override
     public List<Review> findReviewListByCategoryName(String categoryName) {
         String hkey = "redis-review-category-name";
-        String cacheKey = "review:category:"+categoryName;
+        String cacheKey = "review:category:" + categoryName;
         List<Review> reviews = new ArrayList<>(1);
         Object redisObj = redisTemplate.opsForHash().get(cacheKey, hkey);
-        if(null != redisObj){
+        if (null != redisObj) {
             reviews = (List<Review>) redisObj;
             return reviews;
         }
         List<Review> reviewList = baseMapper.selectList(new QueryWrapper<Review>().eq("category_name", categoryName));
-        redisTemplate.opsForHash().put(cacheKey,hkey,reviewList);
+        redisTemplate.opsForHash().put(cacheKey, hkey, reviewList);
         return reviewList;
     }
 
     @Override
     public List<Review> findReviewListByCustomerId(Integer customerId) {
         String hkey = "redis-review-customer-id";
-        String cacheKey = "review:category:"+customerId;
+        String cacheKey = "review:category:" + customerId;
         List<Review> reviews = new ArrayList<>(1);
         Object redisObj = redisTemplate.opsForHash().get(cacheKey, hkey);
-        if(null != redisObj){
+        if (null != redisObj) {
             reviews = (List<Review>) redisObj;
             return reviews;
         }
         List<Review> reviewList = baseMapper.selectList(new QueryWrapper<Review>().eq("customer_id", customerId));
-        redisTemplate.opsForHash().put(cacheKey,hkey,reviewList);
+        redisTemplate.opsForHash().put(cacheKey, hkey, reviewList);
         return reviewList;
     }
 
