@@ -8,7 +8,7 @@
  * @remark:
  */
 
-package com.smartyang.redis.lock;
+package com.smartyang.demo.lock;
 
 /**
  * 分布式锁顶级接口

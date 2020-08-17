@@ -8,7 +8,7 @@
  * @remark:
  */
 
-package com.smartyang.redis.service.impl;
+package com.smartyang.demo.servcie.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
@@ -18,10 +18,10 @@ import com.baomidou.mybatisplus.core.toolkit.ExceptionUtils;
 import com.baomidou.mybatisplus.core.toolkit.ReflectionKit;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.smartyang.redis.exception.IdempotencyException;
-import com.smartyang.redis.exception.LockException;
-import com.smartyang.redis.lock.DistributedLock;
-import com.smartyang.redis.service.ISuperService;
+import com.smartyang.demo.servcie.ISuperService;
+import com.smartyang.demo.exception.IdempotencyException;
+import com.smartyang.demo.exception.LockException;
+import com.smartyang.demo.lock.DistributedLock;
 
 import java.io.Serializable;
 import java.util.Objects;

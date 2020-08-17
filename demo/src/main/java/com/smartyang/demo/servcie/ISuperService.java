@@ -1,8 +1,9 @@
-package com.smartyang.redis.service;
+package com.smartyang.demo.servcie;
+
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.smartyang.redis.lock.DistributedLock;
+import com.smartyang.demo.lock.DistributedLock;
 
 /**
  *

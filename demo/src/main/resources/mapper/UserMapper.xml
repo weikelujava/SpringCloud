@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smartyang.demo.mapper.UserMapper">
+
+    <insert id="insertUser">
+        INSERT INTO user (
+            user_name,
+            password
+        ) VALUES (
+            #{userName},
+            #{password}
+        )
+    </insert>
+
+    <insert id="insertUsers">
+       INSERT INTO user (
+            user_name,
+            password
+        ) VALUES
+        <foreach collection="users" item="user" separator=",">
+            (#{user.userName},#{user.password})
+        </foreach>
+    </insert>
+
+    <select id="countUser" resultType="java.lang.Long">
+        SELECT COUNT(*) FROM user
+    </select>
+
+    <select id="getUserListByBatch" parameterType="java.lang.Integer" resultType="com.smartyang.demo.common.model.User">
+       SELECT * FROM user WHERE user_id >= (SELECT user_id FROM user LIMIT #{startRow},1) LIMIT #{pageSize}
+    </select>
+
+<!--    <select id="getUserListByBatch" parameterType="java.lang.Integer" resultType="com.smartyang.demo.common.model.User">-->
+<!--      SELECT a.* FROM user a-->
+<!--        JOIN (SELECT user_id FROM user LIMIT #{startRow},#{pageSize}) b ON b.user_id = a.user_id-->
+<!--    </select>-->
+
+    <!--
+
+    -->
+</mapper>

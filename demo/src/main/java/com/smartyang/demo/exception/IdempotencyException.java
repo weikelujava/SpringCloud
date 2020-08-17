@@ -8,7 +8,7 @@
  * @remark:
  */
 
-package com.smartyang.redis.exception;
+package com.smartyang.demo.exception;
 
 public class IdempotencyException extends RuntimeException {
     private static final long serialVersionUID = 6610083281801529147L;

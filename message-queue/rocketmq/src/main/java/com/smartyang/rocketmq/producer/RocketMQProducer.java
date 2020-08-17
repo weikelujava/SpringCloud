@@ -5,7 +5,6 @@ import org.apache.rocketmq.common.message.Message;
 import java.util.Properties;
 
 /**
- * All rights Reserved, Designed By http://www.hollysmart.com.cn
  *
  * @version V1.0
  * @title: RockemtMQProducer
@@ -18,6 +17,7 @@ public class RocketMQProducer {
 
 
     public boolean sendMessage(Message message, String groupId) {
-        Properties properties =
+//        Properties properties =
+        return true;
     }
 }

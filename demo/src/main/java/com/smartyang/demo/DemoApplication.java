@@ -1,4 +1,4 @@
-package com.smartyang.redis;
+package com.smartyang.demo;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -7,17 +7,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  *
  * @version V1.0
- * @title: RedisApplication
+ * @title: DemoApplication
  * @description:
- * @author: lukewei
- * @date: 2020/7/24 15:59
+ * @author: weike
+ * @date: 2020/8/17 15:18
  * @remark: 修改内容
  */
-@MapperScan("com.smartyang.redis.mapper.*")
+@MapperScan("com.smartyang.demo.mapper.*")
 @SpringBootApplication
-public class RedisApplication {
-
+public class DemoApplication {
     public static void main(String[] args) {
-        SpringApplication.run(RedisApplication.class, args);
+        SpringApplication.run(DemoApplication.class, args);
     }
 }

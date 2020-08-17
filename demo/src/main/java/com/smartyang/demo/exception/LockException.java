@@ -1,19 +1,19 @@
 /**
  *
  * @version V1.0.0
- * @title: 幂等性异常
+ * @title: 分布式锁异常
  * @description:
  * @author: hollysmart
  * @date: 2019/10/16 12:31
  * @remark:
  */
 
-package com.smartyang.redis.exception;
+package com.smartyang.demo.exception;
 
-public class IdempotencyException extends RuntimeException {
+public class LockException extends RuntimeException {
     private static final long serialVersionUID = 6610083281801529147L;
 
-    public IdempotencyException(String message) {
+    public LockException(String message) {
         super(message);
     }
 }

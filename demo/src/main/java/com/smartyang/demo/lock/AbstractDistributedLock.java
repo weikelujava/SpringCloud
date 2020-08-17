@@ -1,4 +1,4 @@
-package com.smartyang.redis.lock;
+package com.smartyang.demo.lock;
 
 /**
  *

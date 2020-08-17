@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Properties;
 
 /**
- * All rights Reserved, Designed By http://www.hollysmart.com.cn
  *
  * @version V1.0
  * @title: RocketMQConfig
