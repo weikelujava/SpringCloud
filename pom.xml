@@ -9,7 +9,6 @@
     <version>1.0.0</version>
     <modules>
         <module>message-queue</module>
-        <module>message-queue</module>
         <module>gateway</module>
         <module>yang-redis</module>
         <module>lua</module>
@@ -34,8 +33,9 @@
         <spring-boot-starter-test.version>2.3.1.RELEASE</spring-boot-starter-test.version>
 
         <!-- RocketMQ -->
-        <rocketmq-spring-boot-starter>2.0.3</rocketmq-spring-boot-starter>
-
+        <rocketmq-spring-boot-starter.version>2.0.3</rocketmq-spring-boot-starter.version>
+        <!-- RabbitMQ -->
+        <spring-boot-starter-amqp.version>2.2.6.RELEASE</spring-boot-starter-amqp.version>
         <!--Gateway-->
         <spring-cloud-starter-gateway.version>2.1.4.RELEASE</spring-cloud-starter-gateway.version>
         <!--lombok-->
@@ -48,6 +48,9 @@
         <druid-spring-boot-starter.version>1.1.20</druid-spring-boot-starter.version>
         <spring-boot-configuration-processor.version>2.1.12.RELEASE</spring-boot-configuration-processor.version>
         <mybatis-spring-boot-starter.version>2.0.1</mybatis-spring-boot-starter.version>
+        <!--Hutool 工具类库-->
+        <hutoo-all.version>5.1.4</hutoo-all.version>
+        <hutoo-core.version>4.1.8</hutoo-core.version>
 
     </properties>
 
@@ -87,7 +90,7 @@
             <dependency>
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-spring-boot-starter</artifactId>
-                <version>${rocketmq-spring-boot-starter}</version>
+                <version>${rocketmq-spring-boot-starter.version}</version>
             </dependency>
 
             <!--Gateway-->
@@ -139,6 +142,22 @@
                 <optional>true</optional>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-amqp</artifactId>
+                <version>${spring-boot-starter-amqp.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutoo-all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutoo-core.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

@@ -42,7 +42,8 @@ public class BatchQuery {
         }
         //计算查询的次数
         Long times = (count%batchCount == 0 ? count/batchCount : count/batchCount+1);
-//        CountDownLatch latch = new CountDownLatch(times.intValue());
+
+        CountDownLatch latch = new CountDownLatch(times.intValue());
         for (Long i = 0L; i < times; i++) {
 //            Long begin = System.currentTimeMillis();
             Integer startRow = Math.toIntExact(i * batchCount);
