@@ -2,7 +2,7 @@
 
 spring:
   rabbitmq:
-    host: 127.0.0.1
+    host: www.demo.com
     port: 5672
     username: admin
     password: admin
@@ -19,3 +19,11 @@ spring:
         max-concurrency: 10
 server:
   port: 2001
+
+
+mq:
+  fanout:
+    exchange:
+      test: lua-test-exchange
+    queue:
+      test: lua-test-queue
