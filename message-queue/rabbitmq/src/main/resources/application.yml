@@ -2,7 +2,7 @@
 
 spring:
   rabbitmq:
-    host: www.demo.com
+    host: www.sdemo.com
     port: 5672
     username: admin
     password: admin
@@ -18,7 +18,7 @@ spring:
         concurrency: 5
         max-concurrency: 10
 server:
-  port: 2001
+  port: 2002
 
 
 mq:
