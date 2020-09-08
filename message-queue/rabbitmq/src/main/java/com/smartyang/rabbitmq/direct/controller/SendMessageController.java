@@ -30,4 +30,12 @@ public class SendMessageController {
         log.info("发送消息到mq(Direct),message:"+message);
         return "ok";
     }
+
+    @GetMapping("/index/send")
+    public String sendDirectIndexMessage(){
+        String message = "category";
+        directMqSender.sendMessage(message);
+        log.info("发送消息到mq(Direct),message:"+message);
+        return "ok";
+    }
 }
