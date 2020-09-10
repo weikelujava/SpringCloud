@@ -1,4 +1,4 @@
-package com.smartyang.demo;
+package com.smartyang.demo.timeconvertweekday;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -50,10 +50,42 @@ public class TimeConvertWeekDay {
 //        System.out.println(getWeekByCurrentDatetime("2020-09-15"));
 //        System.out.println(getWeekByCurrentDatetime("2020-09-16"));
 //        System.out.println(getWeekByCurrentDatetime("2020-09-17"));
+//        for (int i = 0; i < 7; i++) {
+//            getDateByWeek(String.valueOf(i));
+//        }
+
         for (int i = 0; i < 7; i++) {
-            getDateByWeek(String.valueOf(i));
+            System.out.println(getDateByWeek1(String.valueOf(i)));
         }
 
+
+    }
+
+    public static String getDateByWeek1(String week){
+        int targetWeek = Integer.parseInt(week);
+        // 系统时间中0-7代表周日周一周二..周六，对日历中1-7代表的周日周一..周六，时间相差一天
+        targetWeek++;
+        // 如果配置7为周日，则更改值为0，如果配置大于7，默认周日
+//        if(targetWeek == 8){
+//            targetWeek = 7;
+//        }else if(targetWeek == 7){
+//            targetWeek = 0;
+//        }
+        // 时间格式化
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        //当前系统时间
+        Date currentDay = new Date();
+        String currentDayTime = sdf.format(currentDay.getTime());
+        Calendar c = Calendar.getInstance();
+        Integer currWeek = getWeekByCurrentDatetime(currentDayTime);
+        if(currWeek == Integer.parseInt(week)){
+            return currentDayTime;
+        }
+        do{
+            // 向后推一天，直到星期数与所给的星期数相同
+            c.add(Calendar.DAY_OF_MONTH,1);
+        }while (targetWeek != c.get(Calendar.DAY_OF_WEEK));
+        return sdf.format( c.getTime());
     }
 
     /**

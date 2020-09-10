@@ -27,3 +27,10 @@ mq:
       test: lua-test-exchange
     queue:
       test: lua-test-queue
+
+  direct:
+    nginx:
+      exchange: 'direct.nginx.exchange'
+      queue: 'direct.nginx.delcache.queue'
+      rounting: 'DirectNginxRouting'
+      ip: 'http://10.2.9.63:80'

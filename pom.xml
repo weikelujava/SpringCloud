@@ -51,6 +51,7 @@
         <!--Hutool 工具类库-->
         <hutoo-all.version>5.1.4</hutoo-all.version>
         <hutoo-core.version>4.1.8</hutoo-core.version>
+        <fastjson.version>1.2.73</fastjson.version>
 
     </properties>
 
@@ -157,6 +158,12 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-core</artifactId>
                 <version>${hutoo-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
 
         </dependencies>
