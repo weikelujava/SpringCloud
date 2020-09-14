@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,7 +46,7 @@ public class SendMessageController {
     }
 
     @GetMapping("/category/direct/test/{target}/{type}/{id}")
-    public String test(@PathVariable("target")String target, @PathVariable("type") String type, @PathVariable("id") Long id) {
+    public String test(@PathVariable("target")String target, @PathVariable("type") String type, @PathVariable("id") String id) {
         NginxCacheParamEntity paramEntity = new NginxCacheParamEntity();
         paramEntity.setTarget(target);
         if("0".equals(type)){
@@ -53,10 +54,10 @@ public class SendMessageController {
         }else {
             paramEntity.setType(type);
         }
-        if(id == 0){
+        if("0".equals(id)){
             paramEntity.setTypeId(null);
         }else {
-            paramEntity.setTypeId(10000L);
+            paramEntity.setTypeId(id);
         }
         log.info("1.controller开始执行发送消息");
         directMqSender.sendTestMessage(paramEntity);
@@ -69,5 +70,17 @@ public class SendMessageController {
      */
     public static void main(String[] args) {
         System.out.println(TargetTypeEnum.CATEGORY_WARNING.getType());
+
+        List<String> list= new ArrayList<>();
+        list.add("1001");
+        list.add("1002");
+        String type = "";
+        for (String s : list) {
+            type+=s;
+            type+="-";
+        }
+        System.out.println(type.substring(0,type.lastIndexOf("-")));
+        System.out.println(type.endsWith("-"));
+
     }
 }

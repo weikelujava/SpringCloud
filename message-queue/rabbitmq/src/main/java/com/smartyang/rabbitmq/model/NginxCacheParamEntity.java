@@ -28,7 +28,7 @@ public class NginxCacheParamEntity implements Serializable {
     /**
      * 类型ID，允许传入为null,categoryId or productId
      */
-    private Long typeId;
+    private String typeId;
 
     public NginxCacheParamEntity() {
     }
@@ -54,7 +54,7 @@ public class NginxCacheParamEntity implements Serializable {
         return typeId == null ? "": String.valueOf(typeId);
     }
 
-    public void setTypeId(Long typeId) {
+    public void setTypeId(String typeId) {
         this.typeId = typeId;
     }
 
