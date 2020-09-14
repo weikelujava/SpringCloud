@@ -1,0 +1,40 @@
+package book.discount
+
+import com.smart.drools.mode.Order
+
+// 所购图书总价在100以下的没有价格优惠
+rule "book_discount_1"
+    when
+       $order:Order(originalPrice < 100) // 模式匹配，到规则引擎中(工作内存，workmemory)来查找order对象中originalPrice<100的对象,并起个名字 $order，然后在then中可以使用
+    then
+       $order.setRealPrice($order.getOriginalPrice()); // 将order的原价set到$order的反馈中
+       System.out.println("成功匹配到规则一");
+end
+
+// 所购图书总价在100-200之间优惠20元
+rule "book_discount_2"
+    when
+       $order:Order(originalPrice >= 100 && originalPrice < 200) // 模式匹配，到规则引擎中(工作内存，workmemory)来查找order对象中originalPrice<100的对象,并起个名字 $order，然后在then中可以使用
+    then
+       $order.setRealPrice($order.getOriginalPrice()); // 将order的原价set到$order的反馈中
+       System.out.println("成功匹配到规则二");
+end
+
+
+// 所购图书总价在100-200之间优惠20元
+rule "book_discount_3"
+    when
+       $order:Order(originalPrice >= 200 && originalPrice < 300) // 模式匹配，到规则引擎中(工作内存，workmemory)来查找order对象中originalPrice<100的对象,并起个名字 $order，然后在then中可以使用
+    then
+       $order.setRealPrice($order.getOriginalPrice()-20); // 将order的原价set到$order的反馈中
+       System.out.println("成功匹配到规则三");
+end
+
+// 所购图书总价在100-200之间优惠50元
+rule "book_discount_3"
+    when
+       $order:Order(originalPrice >= 300) // 模式匹配，到规则引擎中(工作内存，workmemory)来查找order对象中originalPrice<100的对象,并起个名字 $order，然后在then中可以使用
+    then
+       $order.setRealPrice($order.getOriginalPrice()-50); // 将order的原价set到$order的反馈中
+       System.out.println("成功匹配到规则四");
+end

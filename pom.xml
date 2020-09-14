@@ -13,6 +13,7 @@
         <module>yang-redis</module>
         <module>lua</module>
         <module>demo</module>
+        <module>drools-rule</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -53,6 +54,8 @@
         <hutoo-core.version>4.1.8</hutoo-core.version>
         <fastjson.version>1.2.73</fastjson.version>
 
+        <!--drools规则引擎-->
+        <drools.version>6.5.0.Final</drools.version>
     </properties>
 
     <dependencyManagement>
@@ -166,6 +169,37 @@
                 <version>${fastjson.version}</version>
             </dependency>
 
+            <!--Drools-->
+<!--            <dependency>-->
+<!--                <groupId>org.kie</groupId>-->
+<!--                <artifactId>kie-api</artifactId>-->
+<!--                <version>${drools.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.kie</groupId>-->
+<!--                <artifactId>kie-spring</artifactId>-->
+<!--                <version>${drools.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.drools</groupId>-->
+<!--                <artifactId>drools-core</artifactId>-->
+<!--                <version>${drools.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.drools</groupId>-->
+<!--                <artifactId>drools-compiler</artifactId>-->
+<!--                <version>${drools.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.drools</groupId>-->
+<!--                <artifactId>drools-decisiontables</artifactId>-->
+<!--                <version>${drools.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.drools</groupId>-->
+<!--                <artifactId>drools-templates</artifactId>-->
+<!--                <version>${drools.version}</version>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 

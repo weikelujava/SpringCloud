@@ -1,0 +1,9 @@
+server:
+  port: 3001
+
+
+spring:
+  drools:
+    path: e:\\demo\\
+    mode: stream
+    update: 10
