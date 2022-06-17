@@ -52,7 +52,7 @@
         <!--Hutool 工具类库-->
         <hutoo-all.version>5.1.4</hutoo-all.version>
         <hutoo-core.version>4.1.8</hutoo-core.version>
-        <fastjson.version>1.2.73</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
 
         <!--drools规则引擎-->
         <drools.version>6.5.0.Final</drools.version>
