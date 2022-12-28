@@ -51,7 +51,7 @@
         <mybatis-spring-boot-starter.version>2.0.1</mybatis-spring-boot-starter.version>
         <!--Hutool 工具类库-->
         <hutoo-all.version>5.1.4</hutoo-all.version>
-        <hutoo-core.version>4.1.8</hutoo-core.version>
+        <hutoo-core.version>5.8.11</hutoo-core.version>
         <fastjson.version>1.2.73</fastjson.version>
 
         <!--drools规则引擎-->
