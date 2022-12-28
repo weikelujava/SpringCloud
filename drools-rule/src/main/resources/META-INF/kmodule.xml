@@ -6,12 +6,13 @@
         packages指定规则文件的目录，目前是放resources目录下
         default:指定当前kbase是否是默认
     -->
-    <kbase name="mykbase1" packages="rules" default="true">
+    <kbase name="mykbase1" packages="com.rules" default="false">
 
         <!--
             name:指定ksession的名称，可任意，但是唯一
             default:指定当前ksession是否是默认
         -->
-        <ksession name="ksession-rule" default="true"/>
+        <ksession name="book-discount" default="false" type="stateless"/>
+        <ksession name="book-discount-stateful" default="false" type="stateful"/>
     </kbase>
 </kmodule>

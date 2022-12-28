@@ -1,4 +1,6 @@
-package book.discount
+package com.rules
+// 该包名同kmodule.xml文件中的packages名称需要保存一致
+
 
 import com.smart.drools.mode.Order
 
@@ -21,20 +23,30 @@ rule "book_discount_2"
 end
 
 
-// 所购图书总价在100-200之间优惠20元
+// 所购图书总价在100-200之间优惠30元
 rule "book_discount_3"
     when
-       $order:Order(originalPrice >= 200 && originalPrice < 300) // 模式匹配，到规则引擎中(工作内存，workmemory)来查找order对象中originalPrice<100的对象,并起个名字 $order，然后在then中可以使用
+       $order:Order(originalPrice >= 200 && originalPrice < 300 && buyCount < 2) // 模式匹配，到规则引擎中(工作内存，workmemory)来查找order对象中originalPrice<100的对象,并起个名字 $order，然后在then中可以使用
     then
-       $order.setRealPrice($order.getOriginalPrice()-20); // 将order的原价set到$order的反馈中
+       $order.setRealPrice($order.getOriginalPrice()-30); // 将order的原价set到$order的反馈中
        System.out.println("成功匹配到规则三");
 end
 
 // 所购图书总价在100-200之间优惠50元
-rule "book_discount_3"
+rule "book_discount_4"
     when
        $order:Order(originalPrice >= 300) // 模式匹配，到规则引擎中(工作内存，workmemory)来查找order对象中originalPrice<100的对象,并起个名字 $order，然后在then中可以使用
     then
        $order.setRealPrice($order.getOriginalPrice()-50); // 将order的原价set到$order的反馈中
        System.out.println("成功匹配到规则四");
+end
+
+
+// 所购图书总价在100-200之间优惠60元
+rule "book_discount_5"
+    when
+       $order:Order(originalPrice >= 200 && originalPrice < 300 && buyCount > 1) // 模式匹配，到规则引擎中(工作内存，workmemory)来查找order对象中originalPrice<100的对象,并起个名字 $order，然后在then中可以使用
+    then
+       $order.setRealPrice($order.getOriginalPrice()-60); // 将order的原价set到$order的反馈中
+       System.out.println("成功匹配到规五");
 end

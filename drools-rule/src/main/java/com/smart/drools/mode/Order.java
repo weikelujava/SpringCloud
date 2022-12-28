@@ -1,5 +1,8 @@
 package com.smart.drools.mode;
 
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.Serializable;
 
 /**
@@ -12,7 +15,10 @@ import java.io.Serializable;
  * @date: 2020-09-14 17:59
  * @remark: 修改内容
  */
+@Slf4j
 public class Order implements Serializable {
+
+    private int buyCount;
 
     /**
      * 原价
@@ -25,6 +31,14 @@ public class Order implements Serializable {
     public Double realPrice;
 
     public Order() {
+    }
+
+    public int getBuyCount() {
+        return buyCount;
+    }
+
+    public void setBuyCount(int buyCount) {
+        this.buyCount = buyCount;
     }
 
     public Double getOriginalPrice() {
@@ -41,13 +55,5 @@ public class Order implements Serializable {
 
     public void setRealPrice(Double realPrice) {
         this.realPrice = realPrice;
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "originalPrice=" + originalPrice +
-                ", realPrice=" + realPrice +
-                '}';
     }
 }
